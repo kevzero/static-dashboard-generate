@@ -39,7 +39,7 @@ Clone the repo and start using Docker:
 ```bash
 git clone <repo-url>
 cd static-dashboard-generator
-make up   # or docker-compose up -d
+docker-compose up -d   # Start all services
 ```
 
 ### Access URLs
@@ -48,12 +48,12 @@ make up   # or docker-compose up -d
 
 ### Stop services
 ```bash
-make down
+docker-compose down
 ```
 
 ### Check logs
 ```bash
-make logs
+docker-compose logs -f
 ```
 
 ---
