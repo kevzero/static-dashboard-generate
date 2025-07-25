@@ -27,13 +27,15 @@
 ---
 
 ## ⚙️ Requirements
-- Docker & Docker Compose
-- Node.js (if running frontend locally without Docker)
-- Python 3.10+ (if running backend locally without Docker)
+- **Docker** & **Docker Compose**
+- **Node.js** (if running frontend locally without Docker)
+- **Python 3.10+** (if running backend locally without Docker)
 
 ---
 
 ## 🚀 Quick Start
+Clone the repo and start using Docker:
+
 ```bash
 git clone <repo-url>
 cd static-dashboard-generator
@@ -44,15 +46,38 @@ make up   # or docker-compose up -d
 - **Frontend (Editor)**: [http://localhost:5173](http://localhost:5173)
 - **Backend (API)**: [http://localhost:8000](http://localhost:8000)
 
-Stop services:
+### Stop services
 ```bash
 make down
 ```
 
-Check logs:
+### Check logs
 ```bash
 make logs
 ```
+
+---
+
+## 🛠 Local Development Without Docker
+### **Backend (FastAPI)**
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+### **Frontend (React + Vite)**
+Make sure Vite and dependencies are installed:
+```bash
+cd frontend
+npm install vite @vitejs/plugin-react --save-dev
+npm install react react-dom react-router-dom react-beautiful-dnd chart.js react-chartjs-2 axios tailwindcss @headlessui/react react-icons
+npx vite
+```
+
+Open the frontend at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
