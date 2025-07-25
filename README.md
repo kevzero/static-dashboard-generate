@@ -35,7 +35,8 @@
 ---
 
 ## 🚀 Quick Start
-Clone the repo and start using Docker:
+### **For Windows, Mac, and Linux**
+Clone the repo and start services using Docker Compose:
 
 ```bash
 git clone <repo-url>
@@ -53,9 +54,20 @@ docker-compose up -d   # Start all services
 docker-compose down
 ```
 
-### Check logs
+### View logs
+- **Windows / Mac / Linux**:
 ```bash
 docker-compose logs -f
+```
+To check logs for a specific service:
+```bash
+docker-compose logs frontend
+docker-compose logs backend
+```
+
+### Rebuild containers (if changes were made)
+```bash
+docker-compose build --no-cache
 ```
 
 ---
@@ -71,15 +83,14 @@ uvicorn app.main:app --reload
 ```
 
 ### **Frontend (React + Vite)**
-Make sure Vite and dependencies are installed:
+Install Vite and dependencies:
 ```bash
 cd frontend
 npm install vite @vitejs/plugin-react --save-dev
 npm install react react-dom react-router-dom react-beautiful-dnd chart.js react-chartjs-2 axios tailwindcss @headlessui/react react-icons
 npx vite
 ```
-
-Open the frontend at: [http://localhost:5173](http://localhost:5173)
+Access frontend at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
